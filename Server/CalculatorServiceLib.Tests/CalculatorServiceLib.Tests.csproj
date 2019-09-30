@@ -55,13 +55,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.csproj">
+      <Project>{0a5adeca-18a2-4f70-96d7-842e9bef3a76}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CalculatorServiceLib\CalculatorServiceLib.csproj">
       <Project>{27f2996a-e06a-42c6-aeff-6365b58f4c79}</Project>
       <Name>CalculatorServiceLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{0a5adeca-18a2-4f70-96d7-842e9bef3a76}</Project>
-      <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
