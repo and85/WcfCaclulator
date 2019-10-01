@@ -10,11 +10,6 @@ namespace CalculatorServiceLib
     {
         private const string FunnyErrorMessage = "What Could Possibly Go Wrong?";
 
-        public int RevertSign(int inputNumber)
-        {
-            return checked(-1 * inputNumber);
-        }
-
         public int Square(int inputNumber) 
         {
             int result;
@@ -31,9 +26,19 @@ namespace CalculatorServiceLib
             return result;
         }
 
-        public float Square(float inputNumber)
+        public void ThrowUnhandledException()
         {
-            return inputNumber * inputNumber;
+            throw new Exception("UnhandledException");
+        }
+
+        public int OverloadingOperation(int inputNumber)
+        {
+            return inputNumber;
+        }
+
+        public float OverloadingOperation(float inputNumber)
+        {
+            return inputNumber;
         }
     }
 }

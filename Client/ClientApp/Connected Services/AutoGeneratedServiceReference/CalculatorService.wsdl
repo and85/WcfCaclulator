@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CalculatorService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/AndriiCalculatorService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8080/AndriiCalculatorService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Common.Faults" />
+      <xsd:import schemaLocation="http://localhost:8080/AndriiCalculatorService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICaclulatorService_Square_InputMessage">
+    <wsdl:part name="parameters" element="tns:Square" />
+  </wsdl:message>
+  <wsdl:message name="ICaclulatorService_Square_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SquareResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaclulatorService_Square_CalculatationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Common.Faults" name="detail" element="q1:CalculatationFault" />
+  </wsdl:message>
+  <wsdl:message name="ICaclulatorService_ThrowUnhandledException_InputMessage">
+    <wsdl:part name="parameters" element="tns:ThrowUnhandledException" />
+  </wsdl:message>
+  <wsdl:message name="ICaclulatorService_ThrowUnhandledException_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ThrowUnhandledExceptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaclulatorService_OverloadingOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:OverloadingOperation" />
+  </wsdl:message>
+  <wsdl:message name="ICaclulatorService_OverloadingOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OverloadingOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaclulatorService_OverloadingOperationFloat_InputMessage">
+    <wsdl:part name="parameters" element="tns:OverloadingOperationFloat" />
+  </wsdl:message>
+  <wsdl:message name="ICaclulatorService_OverloadingOperationFloat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OverloadingOperationFloatResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICaclulatorService">
+    <wsdl:operation name="Square">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaclulatorService/Square" message="tns:ICaclulatorService_Square_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaclulatorService/SquareResponse" message="tns:ICaclulatorService_Square_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICaclulatorService/SquareCalculatationFaultFault" name="CalculatationFaultFault" message="tns:ICaclulatorService_Square_CalculatationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ThrowUnhandledException">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaclulatorService/ThrowUnhandledException" message="tns:ICaclulatorService_ThrowUnhandledException_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaclulatorService/ThrowUnhandledExceptionResponse" message="tns:ICaclulatorService_ThrowUnhandledException_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OverloadingOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaclulatorService/OverloadingOperation" message="tns:ICaclulatorService_OverloadingOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaclulatorService/OverloadingOperationResponse" message="tns:ICaclulatorService_OverloadingOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OverloadingOperationFloat">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaclulatorService/OverloadingOperationFloat" message="tns:ICaclulatorService_OverloadingOperationFloat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaclulatorService/OverloadingOperationFloatResponse" message="tns:ICaclulatorService_OverloadingOperationFloat_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICaclulatorService" type="tns:ICaclulatorService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Square">
+      <soap:operation soapAction="http://tempuri.org/ICaclulatorService/Square" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CalculatationFaultFault">
+        <soap:fault use="literal" name="CalculatationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ThrowUnhandledException">
+      <soap:operation soapAction="http://tempuri.org/ICaclulatorService/ThrowUnhandledException" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OverloadingOperation">
+      <soap:operation soapAction="http://tempuri.org/ICaclulatorService/OverloadingOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OverloadingOperationFloat">
+      <soap:operation soapAction="http://tempuri.org/ICaclulatorService/OverloadingOperationFloat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorService">
+    <wsdl:port name="BasicHttpBinding_ICaclulatorService" binding="tns:BasicHttpBinding_ICaclulatorService">
+      <soap:address location="http://localhost:8080/CalculatorService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
