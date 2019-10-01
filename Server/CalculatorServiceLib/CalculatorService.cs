@@ -1,4 +1,5 @@
-﻿using Common;
+﻿using CalculatorServiceLib.ErrorHandling;
+using Common;
 using Common.Faults;
 using System;
 using System.ServiceModel;
@@ -6,6 +7,7 @@ using System.ServiceModel;
 namespace CalculatorServiceLib
 {
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
+    [GlobalErrorBehavior(typeof(GlobalErrorHandler))]
     public class CalculatorService : ICaclulatorService
     {
         private const string FunnyErrorMessage = "What Could Possibly Go Wrong?";

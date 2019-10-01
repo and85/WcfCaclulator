@@ -37,15 +37,16 @@ namespace ClientApp
                 Console.WriteLine($"Overflow error: {exception.Message}");
             }
 
+            Console.WriteLine("Throwing an unhandled exception:");
             try
             {
-                //Console.WriteLine("Throwing an unhandled exception:");
-                //generatedClient.ThrowUnhandledException();
+                generatedClient.ThrowUnhandledException();
             }
-            catch (Exception exception)
+            catch (FaultException exception)
             {
-                Console.WriteLine(exception.Message);
+                Console.WriteLine($"Unhandled exception catched by global error handler and converted to fault with action: {exception.Message}");
             }
+            
         }
 
         private static void TestManuallyCreatedClient()
