@@ -18,8 +18,9 @@ namespace CalculatorServiceLib.ErrorHandling
 
         public void ProvideFault(Exception error,
             MessageVersion version,
-            ref Message mesage)
+            ref Message message)
         {
+            Console.WriteLine($"{nameof(ProvideFault)}:{message}");
         }
     }
 }

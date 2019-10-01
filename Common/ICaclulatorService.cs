@@ -1,4 +1,5 @@
-﻿using Common.Faults;
+﻿using Common.DataContracts;
+using Common.Faults;
 using System.ServiceModel;
 
 namespace Common
@@ -19,5 +20,8 @@ namespace Common
 
         [OperationContract(Name= "OverloadingOperationFloat")]
         float OverloadingOperation(float inputNumber);
+
+        [OperationContract]
+        SomeData DataContractOperation(SomeData input);
     }
 }

@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:8080/AndriiCalculatorService?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8080/AndriiCalculatorService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Common.Faults" />
       <xsd:import schemaLocation="http://localhost:8080/AndriiCalculatorService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8080/AndriiCalculatorService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Common.DataContracts" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ICaclulatorService_Square_InputMessage">
@@ -34,6 +35,12 @@
   <wsdl:message name="ICaclulatorService_OverloadingOperationFloat_OutputMessage">
     <wsdl:part name="parameters" element="tns:OverloadingOperationFloatResponse" />
   </wsdl:message>
+  <wsdl:message name="ICaclulatorService_DataContractOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:DataContractOperation" />
+  </wsdl:message>
+  <wsdl:message name="ICaclulatorService_DataContractOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DataContractOperationResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICaclulatorService">
     <wsdl:operation name="Square">
       <wsdl:input wsaw:Action="http://tempuri.org/ICaclulatorService/Square" message="tns:ICaclulatorService_Square_InputMessage" />
@@ -51,6 +58,10 @@
     <wsdl:operation name="OverloadingOperationFloat">
       <wsdl:input wsaw:Action="http://tempuri.org/ICaclulatorService/OverloadingOperationFloat" message="tns:ICaclulatorService_OverloadingOperationFloat_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICaclulatorService/OverloadingOperationFloatResponse" message="tns:ICaclulatorService_OverloadingOperationFloat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DataContractOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICaclulatorService/DataContractOperation" message="tns:ICaclulatorService_DataContractOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICaclulatorService/DataContractOperationResponse" message="tns:ICaclulatorService_DataContractOperation_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICaclulatorService" type="tns:ICaclulatorService">
@@ -87,6 +98,15 @@
     </wsdl:operation>
     <wsdl:operation name="OverloadingOperationFloat">
       <soap:operation soapAction="http://tempuri.org/ICaclulatorService/OverloadingOperationFloat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DataContractOperation">
+      <soap:operation soapAction="http://tempuri.org/ICaclulatorService/DataContractOperation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -1,5 +1,6 @@
 ﻿using CalculatorServiceLib.ErrorHandling;
 using Common;
+using Common.DataContracts;
 using Common.Faults;
 using System;
 using System.ServiceModel;
@@ -41,6 +42,11 @@ namespace CalculatorServiceLib
         public float OverloadingOperation(float inputNumber)
         {
             return inputNumber;
+        }
+
+        public SomeData DataContractOperation(SomeData input)
+        {
+            return new SomeData() { Value = Square(input.Value) }; 
         }
     }
 }

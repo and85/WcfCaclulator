@@ -23,10 +23,11 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="AndriiCalculatorService.xsd" MetadataType="Schema" ID="0fb1e7bd-c735-40c7-bd7c-3d5bf28c7313" SourceId="1" SourceUrl="http://localhost:8080/AndriiCalculatorService?xsd=xsd2" />
-    <MetadataFile FileName="AndriiCalculatorService.disco" MetadataType="Disco" ID="bfcffc0f-2d15-41f9-823a-089e3eb21871" SourceId="1" SourceUrl="http://localhost:8080/AndriiCalculatorService?disco" />
     <MetadataFile FileName="AndriiCalculatorService1.xsd" MetadataType="Schema" ID="5c465a33-00b9-4063-adb4-edff4711c639" SourceId="1" SourceUrl="http://localhost:8080/AndriiCalculatorService?xsd=xsd1" />
-    <MetadataFile FileName="CalculatorService.wsdl" MetadataType="Wsdl" ID="5e97a45e-1635-48ce-8ad3-7ca26249fa68" SourceId="1" SourceUrl="http://localhost:8080/AndriiCalculatorService?wsdl" />
     <MetadataFile FileName="AndriiCalculatorService2.xsd" MetadataType="Schema" ID="15adbb22-f39e-4079-8ddc-4a3e534fcdeb" SourceId="1" SourceUrl="http://localhost:8080/AndriiCalculatorService?xsd=xsd0" />
+    <MetadataFile FileName="AndriiCalculatorService.disco" MetadataType="Disco" ID="bfcffc0f-2d15-41f9-823a-089e3eb21871" SourceId="1" SourceUrl="http://localhost:8080/AndriiCalculatorService?disco" />
+    <MetadataFile FileName="CalculatorService.wsdl" MetadataType="Wsdl" ID="5e97a45e-1635-48ce-8ad3-7ca26249fa68" SourceId="1" SourceUrl="http://localhost:8080/AndriiCalculatorService?wsdl" />
+    <MetadataFile FileName="AndriiCalculatorService3.xsd" MetadataType="Schema" ID="c52dd7b5-98be-464a-8596-e0da70644bc7" SourceId="1" SourceUrl="http://localhost:8080/AndriiCalculatorService?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

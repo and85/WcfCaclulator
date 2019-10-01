@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\SomeData.cs" />
     <Compile Include="Faults\CalculatationFault.cs" />
     <Compile Include="ICaclulatorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
